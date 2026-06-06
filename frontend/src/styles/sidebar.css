@@ -1,0 +1,177 @@
+.sidebar {
+  width: 270px;
+  min-height: 100vh;
+  background: #0f172a;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+}
+
+/* Logo Section */
+
+.sidebar-logo {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.logo-circle {
+  width: 75px;
+  height: 75px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  background: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+
+.sidebar-logo h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.sidebar-logo p {
+  margin-top: 6px;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+/* Menu */
+
+.menu-section {
+  flex: 1;
+  margin-top: 20px;
+}
+
+.menu-link {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.menu-link:hover {
+  background: #1e293b;
+  transform: translateX(5px);
+}
+
+.menu-link.active {
+  background: #2563eb;
+}
+
+/* Footer */
+
+.sidebar-footer {
+  border-top: 1px solid #334155;
+  padding-top: 20px;
+}
+
+/* User Card */
+
+.user-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.user-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.user-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.user-role {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* Logout */
+
+.logout-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #dc2626;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: #b91c1c;
+}
+@media (max-width: 768px) {
+
+  .sidebar {
+    width: 80px;
+    min-width: 80px;
+    padding: 12px 8px;
+  }
+
+  .sidebar-logo h2,
+  .sidebar-logo p,
+  .user-name,
+  .user-role {
+    display: none;
+  }
+
+  .logo-circle {
+    width: 55px;
+    height: 55px;
+    font-size: 22px;
+  }
+
+  .menu-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0;
+    padding: 14px 0;
+    margin-bottom: 8px;
+  }
+
+  .menu-link::first-letter {
+    font-size: 24px;
+  }
+
+  .user-card {
+    justify-content: center;
+  }
+
+  .user-avatar {
+    width: 38px;
+    height: 38px;
+  }
+
+  .logout-btn {
+    font-size: 0;
+    padding: 12px;
+  }
+
+  .logout-btn::before {
+    content: "🚪";
+    font-size: 22px;
+  }
+}

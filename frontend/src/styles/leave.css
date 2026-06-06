@@ -1,0 +1,60 @@
+.leave-card {
+  width: 50%;
+  max-width: 700px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.leave-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.leave-table th {
+  background: #1e293b;
+  color: white;
+  padding: 12px;
+}
+
+.leave-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.approve-btn {
+  background: green;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-right: 5px;
+}
+
+.reject-btn {
+  background: crimson;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+@media (max-width: 768px) {
+
+  .leave-card {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .employee-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .approve-btn,
+  .reject-btn {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+}

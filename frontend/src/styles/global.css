@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #f1f5f9;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #dbe2ea;
+  border-radius: 8px;
+}
+
+button {
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+
+  h1 {
+    font-size: 28px !important;
+  }
+
+  .form-card,
+  .leave-card,
+  .payroll-card,
+  .page-card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  table {
+    min-width: 700px;
+  }
+
+  .employee-table,
+  .leave-table,
+  .payroll-table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+.card{
+  min-height:auto;
+}

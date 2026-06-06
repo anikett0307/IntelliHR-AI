@@ -1,0 +1,109 @@
+.navbar {
+  height: 90px;
+  background: white;
+  padding: 0 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 30px;
+
+  box-shadow:
+    0 2px 10px rgba(0,0,0,0.08);
+}
+
+.navbar-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.navbar-subtitle {
+  color: #64748b;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.role-badge {
+  background: #dbeafe;
+  color: #2563eb;
+
+  padding: 8px 14px;
+
+  border-radius: 20px;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.navbar-info {
+  text-align: right;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.user-badge {
+  width: 45px;
+  height: 45px;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+.navbar {
+  border-bottom:
+    1px solid #e2e8f0;
+}
+
+.user-badge {
+  box-shadow:
+    0 4px 10px rgba(37,99,235,0.3);
+}
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 12px 15px;
+    min-height: 70px;
+  }
+
+  .navbar-title {
+    font-size: 18px;
+  }
+
+  .navbar-subtitle {
+    display: none;
+  }
+
+  .navbar-user {
+    gap: 10px;
+  }
+
+  .role-badge {
+    display: none;
+  }
+
+  .navbar-info {
+    display: none;
+  }
+
+  .user-badge {
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
+  }
+}

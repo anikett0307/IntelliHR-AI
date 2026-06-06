@@ -1,0 +1,47 @@
+.attendance-card {
+  width: 70%;
+    max-width: 900px;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  
+}
+
+.attendance-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.attendance-table th {
+  background: #1e293b;
+  color: white;
+  padding: 12px;
+}
+
+.attendance-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+@media (max-width: 768px) {
+
+  .attendance-card {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+  }
+
+  .employee-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .approve-btn,
+  .reject-btn {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+}

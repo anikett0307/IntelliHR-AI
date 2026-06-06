@@ -1,0 +1,43 @@
+.payroll-card {
+  width: 50%;
+    max-width: 700px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.payroll-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.payroll-table th {
+  background: #1e293b;
+  color: white;
+  padding: 12px;
+}
+
+.payroll-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+@media (max-width: 768px) {
+
+  .payroll-card {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .employee-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .approve-btn {
+    width: 100%;
+  }
+
+}

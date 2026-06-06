@@ -31,6 +31,30 @@ function Employees() {
   });
 
   const [editingId, setEditingId] = useState(null);
+  const token =
+  localStorage.getItem(
+    "token"
+  );
+
+let roleId = 4;
+
+if (token) {
+  try {
+    const decoded =
+      JSON.parse(
+        atob(
+          token.split(".")[1]
+        )
+      );
+
+    roleId =
+      decoded.role_id;
+  } catch {}
+}
+
+const canManageEmployees =
+  roleId === 1 ||
+  roleId === 2;
 
   useEffect(() => {
     loadEmployees();
@@ -227,16 +251,20 @@ function Employees() {
   }}
 >
 
-  <button
-    onClick={() =>
-      setShowForm(!showForm)
-    }
-    className="btn"
-  >
-    {showForm
-      ? "Hide Form"
-      : "+ Add Employee"}
-  </button>
+  {canManageEmployees && (
+
+<button
+  onClick={() =>
+    setShowForm(!showForm)
+  }
+  className="btn"
+>
+  {showForm
+    ? "Hide Form"
+    : "+ Add Employee"}
+</button>
+
+)}
 
   <input
     type="text"
@@ -271,7 +299,8 @@ function Employees() {
       <br />
       <br />
 
-      {showForm && (
+      {showForm &&
+ canManageEmployees && (
         <>
           <h3
             style={{
@@ -439,30 +468,38 @@ function Employees() {
                   </td>
 
                   <td>
-                    <button
-                      className="approve-btn"
-                      onClick={() =>
-                        handleEdit(
-                          employee
-                        )
-                      }
-                    >
-                      Edit
-                    </button>
 
-                    {" "}
+{canManageEmployees && (
 
-                    <button
-                      className="reject-btn"
-                      onClick={() =>
-                        handleDelete(
-                          employee.id
-                        )
-                      }
-                    >
-                      Delete
-                    </button>
-                  </td>
+<>
+  <button
+    className="approve-btn"
+    onClick={() =>
+      handleEdit(
+        employee
+      )
+    }
+  >
+    Edit
+  </button>
+
+  {" "}
+
+  <button
+    className="reject-btn"
+    onClick={() =>
+      handleDelete(
+        employee.id
+      )
+    }
+  >
+    Delete
+  </button>
+</>
+
+)}
+
+</td>
                 </tr>
               )
             )

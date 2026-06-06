@@ -19,6 +19,31 @@ function Leaves() {
     useState(1);
     const [showForm, setShowForm] =
   useState(false);
+  const token =
+  localStorage.getItem(
+    "token"
+  );
+
+let roleId = 4;
+
+if (token) {
+  try {
+    const decoded =
+      JSON.parse(
+        atob(
+          token.split(".")[1]
+        )
+      );
+
+    roleId =
+      decoded.role_id;
+  } catch {}
+}
+
+const canApproveLeave =
+  roleId === 1 ||
+  roleId === 2 ||
+  roleId === 3;
 
   const recordsPerPage = 10;
 
@@ -310,30 +335,38 @@ function Leaves() {
                   </td>
 
                   <td>
-                    <button
-                      className="approve-btn"
-                      onClick={() =>
-                        handleApprove(
-                          leave.id
-                        )
-                      }
-                    >
-                      Approve
-                    </button>
 
-                    {" "}
+{canApproveLeave && (
 
-                    <button
-                      className="reject-btn"
-                      onClick={() =>
-                        handleReject(
-                          leave.id
-                        )
-                      }
-                    >
-                      Reject
-                    </button>
-                  </td>
+<>
+  <button
+    className="approve-btn"
+    onClick={() =>
+      handleApprove(
+        leave.id
+      )
+    }
+  >
+    Approve
+  </button>
+
+  {" "}
+
+  <button
+    className="reject-btn"
+    onClick={() =>
+      handleReject(
+        leave.id
+      )
+    }
+  >
+    Reject
+  </button>
+</>
+
+)}
+
+</td>
                 </tr>
               )
             )

@@ -24,7 +24,7 @@ import JobManagement from "./pages/JobManagement";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/IntelliHR-AI">
       <Routes>
         <Route
           path="/"
